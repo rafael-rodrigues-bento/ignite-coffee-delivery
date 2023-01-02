@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.div``
+export const HomeContainer = styled.div`
+  h3 {
+    font-family: 'Baloo 2';
+    font-weight: 800;
+    font-size: 3.2rem;
+    line-height: 130%;
+    color: ${({ theme }) => theme['base-subtitle']};
+  }
+`
 
 export const SloganContainer = styled.div`
   display: flex;
@@ -33,4 +41,8 @@ export const InfoListContainer = styled.div`
   grid-template-columns: auto auto;
   margin-top: 6.6rem;
   gap: 2rem;
+`
+export const GridCoffee = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, auto);
 `

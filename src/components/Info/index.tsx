@@ -1,15 +1,16 @@
 import { ReactNode } from 'react'
-import { InfoContainer } from './style'
+import { InfoContainer, SpanContainer, BACKGROUND_COLOR } from './style'
 
 interface InfoProps {
   icon: ReactNode
   text: string
+  bgIcon: keyof typeof BACKGROUND_COLOR
 }
 
-export function Info({ icon, text }: InfoProps) {
+export function Info({ icon, text, bgIcon = 'purple' }: InfoProps) {
   return (
     <InfoContainer>
-      <span>{icon}</span>
+      <SpanContainer bgIcon={bgIcon}>{icon}</SpanContainer>
       <p>{text}</p>
     </InfoContainer>
   )

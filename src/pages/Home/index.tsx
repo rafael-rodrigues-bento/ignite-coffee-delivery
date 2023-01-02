@@ -1,11 +1,19 @@
 import { Info } from '../../components/Info'
-import { HomeContainer, InfoListContainer, SloganContainer } from './styles'
+import {
+  GridCoffee,
+  HomeContainer,
+  InfoListContainer,
+  SloganContainer,
+} from './styles'
 
 import { BsFillCartFill } from 'react-icons/bs'
 import { RiTimerFill } from 'react-icons/ri'
 import { FiCoffee, FiPackage } from 'react-icons/fi'
 
 import coffeeSloganImg from '../../assets/coffeeSlogan.svg'
+import { CardCoffee } from './components/CardCoffee'
+
+import { coffees } from '../../data/coffee'
 
 export function Home() {
   return (
@@ -20,18 +28,22 @@ export function Home() {
 
           <InfoListContainer>
             <Info
+              bgIcon="yellowDark"
               icon={<BsFillCartFill size={16} />}
               text="Compra simples e segura"
             />
             <Info
+              bgIcon="yellow"
               icon={<RiTimerFill size={16} />}
               text="Entrega rápida e rastreada"
             />
             <Info
+              bgIcon="gray"
               icon={<FiPackage size={16} />}
               text="Embalagem mantém o café intacto"
             />
             <Info
+              bgIcon="purple"
               icon={<FiCoffee size={16} />}
               text="O café chega fresquinho até você"
             />
@@ -40,6 +52,23 @@ export function Home() {
 
         <img src={coffeeSloganImg} alt="Imagem de um copo de café" />
       </SloganContainer>
+
+      <h3>Nossos cafés</h3>
+
+      <GridCoffee>
+        {coffees.map((coffee) => {
+          return (
+            <CardCoffee
+              imgUrl={coffee.imageUrl}
+              name={coffee.name}
+              description={coffee.description}
+              price={coffee.price}
+              tags={coffee.tags}
+              key={coffee.id}
+            />
+          )
+        })}
+      </GridCoffee>
     </HomeContainer>
   )
 }
