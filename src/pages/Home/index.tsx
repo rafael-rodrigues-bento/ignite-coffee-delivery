@@ -30,22 +30,22 @@ export function Home() {
             <Info
               bgIcon="yellowDark"
               icon={<BsFillCartFill size={16} />}
-              text="Compra simples e segura"
+              title="Compra simples e segura"
             />
             <Info
               bgIcon="yellow"
               icon={<RiTimerFill size={16} />}
-              text="Entrega rápida e rastreada"
+              title="Entrega rápida e rastreada"
             />
             <Info
               bgIcon="gray"
               icon={<FiPackage size={16} />}
-              text="Embalagem mantém o café intacto"
+              title="Embalagem mantém o café intacto"
             />
             <Info
               bgIcon="purple"
               icon={<FiCoffee size={16} />}
-              text="O café chega fresquinho até você"
+              title="O café chega fresquinho até você"
             />
           </InfoListContainer>
         </div>

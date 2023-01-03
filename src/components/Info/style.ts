@@ -14,13 +14,8 @@ export const InfoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1.2rem;
-
-  p {
-    line-height: 130%;
-    color: ${({ theme }) => theme['base-text']};
-  }
 `
-export const SpanContainer = styled.span<IconColorProps>`
+export const IconContainer = styled.span<IconColorProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,4 +24,8 @@ export const SpanContainer = styled.span<IconColorProps>`
   border-radius: 1000px;
   background-color: ${(props) => props.theme[BACKGROUND_COLOR[props.bgIcon]]};
   color: ${({ theme }) => theme.white};
+`
+export const TextContainer = styled.div`
+    line-height: 130%;
+    color: ${({ theme }) => theme['base-text']};
 `
