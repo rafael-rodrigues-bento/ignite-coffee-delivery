@@ -20,6 +20,7 @@ export function Payment() {
         <input type="radio" name="methodPayment" id="creditCard" />
         <label htmlFor="creditCard"><BsCreditCard2Front size={12}/> Cartão de crédito</label>
 
+
         <input type="radio" name="methodPayment" id="debitCard" />
         <label htmlFor="debitCard"><BsBank size={12}/> Cartão de débito</label>
 

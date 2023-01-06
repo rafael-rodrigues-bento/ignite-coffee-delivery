@@ -33,6 +33,7 @@ export const Header = styled.div`
 
 export const MethodPaymentContainer = styled.div`
   display: flex;
+  gap: 1.2rem;
     input {
       position: absolute;
       width: 1px;
@@ -46,15 +47,21 @@ export const MethodPaymentContainer = styled.div`
 
     &:checked + label {
       background: ${({ theme }) => theme["purple-light"]};
+      border: 1px solid ${({ theme }) => theme.purple};
+
+      svg {
+        color: ${({ theme }) => theme.purple};
+      }
     }
   }
 
   label {
     display: flex;
     align-items: center;
-    gap: rem;
+    gap: 1rem;
     padding: 1.6rem 2.8rem;
     background: ${({ theme }) => theme["base-button"]};
+    border-radius: 6px;
 
    font-size: 1.2rem;
    line-height: 160%;

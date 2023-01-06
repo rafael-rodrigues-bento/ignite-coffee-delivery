@@ -10,7 +10,9 @@ import { FaShoppingCart } from 'react-icons/fa'
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={logoImg} alt="" />
+      <NavLink to="/">
+        <img src={logoImg} alt="" /> 
+      </NavLink>
 
       <nav>
         <LocalizationContainer>
@@ -18,7 +20,7 @@ export function Header() {
           <p> Porto Alegre, RS</p>
         </LocalizationContainer>
 
-        <NavLink to="/">
+        <NavLink to="/checkout">
           <FaShoppingCart size={22} />
         </NavLink>
       </nav>
