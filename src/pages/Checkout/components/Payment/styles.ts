@@ -62,6 +62,7 @@ export const MethodPaymentContainer = styled.div`
     padding: 1.6rem 2.8rem;
     background: ${({ theme }) => theme["base-button"]};
     border-radius: 6px;
+    border: 1px solid transparent;
 
    font-size: 1.2rem;
    line-height: 160%;

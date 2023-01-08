@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
-  display: grid;
-  grid-template-columns: 65% 35%;
-  gap: 3.2rem;
+  > form {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 3.2rem;
+  }
+ 
 
   h1 {
     font-family: 'Baloo 2';
