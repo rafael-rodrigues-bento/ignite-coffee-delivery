@@ -7,6 +7,7 @@ import { CoffeeSelected } from "./components/CoffeeSelected";
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as zod from "zod"
+import { useState } from "react";
 
 const newOrderFormValidationSchema = zod.object({
   cep: zod.string().min(8, "Informe um Cep"),
@@ -21,7 +22,22 @@ const newOrderFormValidationSchema = zod.object({
 
 type NewOrderFormData = zod.infer<typeof newOrderFormValidationSchema>
 
+interface Order {
+  id: string
+  cep: string
+  street: string
+  number: string
+  complement: string
+  district: string
+  city: string
+  uf: string
+  methodPayment: string
+}
+
 export function Checkout() {
+  const [order, setOrder] = useState<Order>()
+
+
   const newOrder = useForm<NewOrderFormData>({
     resolver: zodResolver(newOrderFormValidationSchema),
   });
@@ -29,7 +45,19 @@ export function Checkout() {
   const { handleSubmit, reset } = newOrder
 
   function handleCreateNewOrder(data: NewOrderFormData) {
-    console.log(data)
+    const newOrder: Order = {
+      id: String(new Date().getTime()),
+      cep: data.cep,
+      street: data.street,
+      number: data.number,
+      complement: data.complement,
+      district: data.district,
+      city: data.city,
+      uf: data.uf,
+      methodPayment: data.methodPayment,
+    }
+
+    setOrder(newOrder)
     reset()
   }
 

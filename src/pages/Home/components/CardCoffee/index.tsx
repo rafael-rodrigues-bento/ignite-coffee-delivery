@@ -3,6 +3,7 @@ import { BsFillCartFill } from 'react-icons/bs'
 import { HiOutlineMinusSm, HiOutlinePlusSm } from 'react-icons/hi'
 
 import { FormatPrice } from '../../../../utils/formatPrice'
+import { useState } from 'react'
 
 interface CardCoffeeProps {
   imgUrl: string
@@ -19,6 +20,24 @@ export function CardCoffee({
   description,
   price,
 }: CardCoffeeProps) {
+  const [quantity, setQuantity] = useState(1)
+
+  function handleIncrementQuantity() {
+    setQuantity(prevState => prevState + 1)
+  }
+
+  function handleDecrementQuantity() {
+    if(quantity <= 1) {
+      alert('Mínimo de 1 item para efetuar o pedido!')
+    } else {
+      setQuantity(prevState => prevState -1)
+    }
+  }
+
+  function handleAddProductToCart() {
+    
+  }
+
   return (
     <CardCoffeeContainer>
       <img src={`coffees-imgs/${imgUrl}`} alt="" />
@@ -40,11 +59,11 @@ export function CardCoffee({
         </div>
 
         <div className="amount-coffee">
-          <button>
+          <button onClick={handleDecrementQuantity}>
             <HiOutlineMinusSm size={16} />
           </button>
-          <p>1</p>
-          <button>
+          <p>{quantity}</p>
+          <button onClick={handleIncrementQuantity}>
             <HiOutlinePlusSm size={16} />
           </button>
         </div>

@@ -101,5 +101,6 @@ export const CartContainer = styled.div`
     border-radius: 6px;
     color: ${({ theme }) => theme.white};
     background: ${({ theme }) => theme['purple-dark']};
+    cursor: pointer;
   }
 `
